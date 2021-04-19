@@ -32,4 +32,4 @@ def hastaliklar2():
 
 @views.route("/sulama+bilgileri")
 def sulamabilgileri():
-    return render_template("sulamasecimleri.html", user=current_user)
+    return render_template("sulamabilgileri.html", user=current_user)

@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}NITAVOS-Hakkında{% endblock %}
+{% block title %}NİTAVOS-Sulama Sistemi{% endblock %}
 {% block content %}
 <!DOCTYPE html>
  <html>
@@ -16,7 +16,7 @@
      <meta charset="utf-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1">
-     <title>Nitavos Hakkında</title>
+     <title>Nitavos Sulama Sistemi</title>
      <link rel="stylesheet" href="assets/css/bootstrap.min.css">
      <link rel="stylesheet" href="assets/css/style.css">
      <link rel="stylesheet" href="assets/css/responsive.css">
@@ -44,61 +44,20 @@
         <span style="font-size:55px;cursor:pointer;color:white" onclick="openNav()">&#9776;</span>
         <img src="static/nitvos.png" style="width:340px;height:90px;margin:0px 0px 20px 0px;">
          <div class="header-right">
-             <a href="/hakkinda2"><i class="fa fa-fw fa-file"></i><p id="navbar">Hakkında</p></a>
+            {% if user.is_authenticated %}
+             <a href="/sulama+bilgileri"><i class="fa fa-fw fa-microchip"></i><p id="navbar">Sulama Sistemi</p></a>
          </div>
          <div id="mySidenav" class="sidenav">
              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
              <a href="/anasayfa2"><i class="fa fa-fw fa-home"></i><p id="navbar">Ana Sayfa</p></a>
              <a href="/hakkinda2"><i class="fa fa-fw fa-file"></i><p id="navbar">Hakkında</p></a>
              <a href="/hastaliklar2"><i class="fa fa-fw fa-leaf"></i><p id="navbar">Hastalıklar</p></a>
-             <a href="//sulama+bilgileri"><i class="fa fa-fw fa-microchip"></i><p id="navbar">Sulama Sis.</p></a>
+             <a href="/sulama+bilgileri"><i class="fa fa-fw fa-microchip"></i><p id="navbar">Sulama Sis.</p></a>
              <a href="/logout"><i class="fa fa-fw fa-sign-out"></i><p id="navbar">Çıkış Yap</p></a>
+         </div>
+         {% endif %}
      </div>
      <!--Navbar-->
-     <!-- Ana Sayfa -->
-
-     <div class="grey-square">
-
-
-         <meta name="viewport" content="width=device-width, initial-scale=1">
-         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-
-
-         <div class="w3-bar w3-blue">
-             <p id="sss">
-                 <button class="w3-bar-item w3-button" onclick="openCity('London')">Nitavos Nedir?</button>
-                 <button class="w3-bar-item w3-button" onclick="openCity('Paris')">Nitavos ne işe yarar?</button>
-                 <button class="w3-bar-item w3-button" onclick="openCity('Tokyo')">Nitavos'u nasıl kullanabilirim?</button>
-             </p>
-         </div>
-
-         <div id="London" class="w3-container city">
-             <p id="baslik"><n>-</n>Nitavos nedir?</p>
-             <p id="yazi">
-                 <n>+</n>Nitavos, ilk olarak lise öğrencileri, Cem Ege Ergün ve
-                 Ahmet Ömer Erkenci tarafından gerçekleştirilen bir tarım projesidir.
-             </p>
-         </div>
-
-         <div id="Paris" class="w3-container city" style="display:none">
-             <p id="baslik"> <n>-</n>Nitavos ne işe yarar?</p>
-             <p id="yazi">
-                 <n>+</n>Nitavos Projesi tarımda internet ve otomasyonu kullanarak, uzaktan kontorl
-                 edilebilmesini ve sulama sırasında optimum seviyede su kullanılmasını sağlar.
-             </p>
-         </div>
-
-         <div id="Tokyo" class="w3-container city" style="display:none">
-             <p id="baslik"> <n>-</n>Nitavos'u Nasıl Kullanabilirim?</p>
-             <p id="yazi">
-                 <n>+</n> Nitavos şu anda Kapalı Beta aşamsındadır, serbest erişime açılması şu anda 2021 Teknofest yarışması
-                 tarihlerine bağlıdır.
-             </p>
-         </div>
-     </div>
-
-     <!-- Ana Sayfa -->
      <!-- jQuery -->
      <script src="assets/js/jquery.min.js"></script>
      <script src="assets/js/bootstrap.min.js"></script>
@@ -106,4 +65,4 @@
 
  </body>
  </html>
- {% endblock %}
+{% endblock %}

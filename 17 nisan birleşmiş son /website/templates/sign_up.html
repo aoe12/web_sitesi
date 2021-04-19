@@ -8,65 +8,67 @@ type="text/javascript"
 src="{{ url_for('static', filename='Nitavos.js') }}"
 ></script>
 <div class="topnav" id="myTopnav">
-    <span style="font-size:55px;cursor:pointer;color:white" onclick="openNav()">&#9776; Nitavos </span>
+    <span style="font-size:55px;cursor:pointer;color:white" onclick="openNav()">&#9776;</span>
+    <img src="static/nitvos.png" style="width:340px;height:90px;margin:0px 0px 20px 0px;">
     <div class="header-right">
-        <a href="/sign-up"><i class="fa fa-fw fa-clone"></i><p id="navbar">Kayıt</p></a>
+        <a href="/sign-up"><i class="fa fa-fw fa-wpforms"></i><p id="navbar">Kayıt</p></a>
     </div>
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="/"><i class="fa fa-fw fa-home"></i><p id="navbar">Ana Sayfa</p></a>
         <a href="/hakkinda"><i class="fa fa-fw fa-file"></i><p id="navbar">Hakkında</p></a>
         <a href="/hastaliklar"><i class="fa fa-fw fa-leaf"></i><p id="navbar">Hastalıklar</p></a>
-        <a href="/login"><i class="fa fa-fw fa-home"></i><p id="navbar">Giriş Yap</p></a>
-        <a href="/sign-up"><i class="fa fa-fw fa-bars"></i><p id="navbar">Kayıt Ol</p></a>
+        <a href="/login"><i class="fa fa-fw fa-sign-in"></i><p id="navbar">Giriş Yap</p></a>
+        <a href="/sign-up"><i class="fa fa-fw fa-wpforms"></i><p id="navbar">Kayıt Ol</p></a>
+    </div>
 </div>
 <form method="POST">
     <br />
-    <h3 align="center">Sign Up</h3>
+    <h3 align="center">Kayıt Ol</h3>
     <div class="form-group">
-        <label for="email">Email Address</label>
+        <label for="email">Email Adresi</label>
         <input
         type="email"
         class="form-control"
         id="email"
         name="email"
-        placeholder="Enter email"
+        placeholder="Email adresinizi giriniz"
         />
     </div>
 
     <div class="form-group">
-        <label for="firstName">First Name</label>
+        <label for="firstName">İsim</label>
         <input
         type="text"
         class="form-control"
         id="firstName"
         name="firstName"
-        placeholder="Enter first name"
+        placeholder="İsminizi giriniz"
         />
     </div>
 
     <div class="form-group">
-        <label for="password1">Password</label>
+        <label for="password1">Şifre</label>
         <input
         type="password"
         class="form-control"
         id="password1"
         name="password1"
-        placeholder="Enter password"
+        placeholder="Şifre belirleyiniz"
         />
     </div>
 
     <div class="form-group">
-        <label for="password2">Password (Confirm)</label>
+        <label for="password2">Şifre (Onay)</label>
         <input
         type="password"
         class="form-control"
         id="password2"
         name="password2"
-        placeholder="Confirm password"
+        placeholder="Girdiğiniz şifreyi onaylayınız"
         />
     </div>
     <br />
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">Kaydımı Tamamla!</button>
 </form>
 {% endblock %}
