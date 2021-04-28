@@ -1,0 +1,309 @@
+{% extends "base.html" %}
+{% block title %}NİTAVOS | Sulama Sistemi{% endblock %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Nitavos.css')}}">
+    <script
+    type="text/javascript"
+    src="{{ url_for('static', filename='Nitavos.js') }}"
+  ></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <!-- kopyaslanıcak 2 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+  <!-- kopyaslanıcak 2 -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nitavos Sulama Sistemi</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+
+    <!-- Grid js -->
+    <script type="text/javascript" src="assets/scripts/grid/jquery-1.10.2.min.js"></script>
+
+    <script src="assets/scripts/grid/grids.js"></script>
+
+    <script type="text/javascript">
+        jQuery(function ($) {
+            $('.element').responsiveEqualHeightGrid();
+        });
+    </script>
+    <!-- Grid js -->
+
+
+</head>
+<body>
+
+
+   <!--Navbar-->
+   <div class="sticky-top">
+    <div class="topnav" id="myTopnav">
+       <span style="font-size:55px;cursor:pointer;color:white" onclick="openNav()">&#9776;</span>
+       <img src="static/nitvos.png" style="width:340px;height:90px;margin:0px 0px 20px 0px;">
+        <div class="header-right">
+           {% if user.is_authenticated %}
+            <a href="/sulama+bilgileri"><i class="fa fa-fw fa-wifi" style="font-size:50px"></i><p id="navbar">Sulama Sistemi</p></a>
+        </div>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="/anasayfa2"><i class="fa fa-fw fa-home"></i><p id="navbar">Ana Sayfa</p></a>
+            <a href="/hakkinda2"><i class="fa fa-fw fa-file"></i><p id="navbar">Hakkında</p></a>
+            <a href="/hastaliklar2"><i class="fa fa-fw fa-leaf"></i><p id="navbar">Hastalıklar</p></a>
+            <a href="/sulama+bilgileri"><i class="fa fa-fw fa-wifi"></i><p id="navbar">Sulama Sis.</p></a>
+            <a href="/logout"><i class="fa fa-fw fa-sign-out"></i><p id="navbar">Çıkış Yap</p></a>
+        </div>
+        {% endif %}
+    </div>
+    </div>
+    <!--Navbar-->
+    <!-- Ana Sayfa -->
+    <p id="baslik">Sulama Yapılabilmesi için için lütfen bilgilerinizi giriniz</p>
+    <p id="byzbosluk">-</p>
+    <!-- Sulama Dock -->
+    <div class=" row3">
+
+        <div class=" column3">
+            <div class="blue-square" style="border: 5px blue solid; border-radius:20px">
+
+                <form class="row g-3 needs-validation" novalidate>
+                    <div class="col-md-6"><p id="byzbosluk">-</p></div>
+                    <div class="col-md-6"><p id="byzbosluk">-</p></div>
+                    <div class="col-md-2"><p id="byzbosluk">-</p></div>
+                    <div class="col-md-2"><p id="yazi">Ekim tarihi seçiniz:</p></div>
+
+                    <div class="col-md-1">
+                        <label for="validationCustom01" class="form-label">Gün</label>
+                        <select class="form-select" id="validationCustom01" required>
+                            <option selected disabled value="">Gün...</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                            <option>11</option>
+                            <option>12</option>
+                            <option>13</option>
+                            <option>14</option>
+                            <option>15</option>
+                            <option>16</option>
+                            <option>17</option>
+                            <option>18</option>
+                            <option>19</option>
+                            <option>20</option>
+                            <option>21</option>
+                            <option>22</option>
+                            <option>23</option>
+                            <option>24</option>
+                            <option>25</option>
+                            <option>26</option>
+                            <option>27</option>
+                            <option>28</option>
+                            <option>29</option>
+                            <option>30</option>
+                            <option>31</option>
+
+                        </select>
+                        <div class="invalid-feedback">
+                            Lütfen geçerli bir gün giriniz
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <label for="validationCustom02" class="form-label">Ay</label>
+                        <select class="form-select" id="validationCustom02" required>
+                            <option selected disabled value="">Ay...</option>
+                            <option>Ocak</option>
+                            <option>Şubat</option>
+                            <option>Mart</option>
+                            <option>Nisan</option>
+                            <option>Mayıs</option>
+                            <option>Haziran</option>
+                            <option>Temmuz</option>
+                            <option>Ağustos</option>
+                            <option>Eylül</option>
+                            <option>Ekim</option>
+                            <option>Kasım</option>
+                            <option>Aralık</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Lütfen geçerli bir ay giriniz
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <label for="validationCustom03" class="form-label">Yıl</label>
+                        <select class="form-select" id="validationCustom03" required>
+                            <option selected disabled value="">Yıl...</option>
+                            <option>2021</option>
+                            <option>2022</option>
+                            <option>2023</option>
+                            <option>2024</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Lütfen geçerli bir yıl giriniz
+                        </div>
+                    </div>
+                    <div class="col-md-2"><p id="yazi">Hasat Tarihi:</p></div>
+                    <div class="col-md-3"><p id="byzbosluk">-</p></div>
+                    <div class="col-md-2"><p id="byzbosluk">-</p></div>
+                    <div class="col-md-2"><p id="yazi">Ekilen tarım ürününü seçiniz</p></div>
+
+                    <div class="col-md-3">
+                        <label for="validationCustom04" class="form-label">Ürün Seçiniz</label>
+                        <select class="form-select" id="validationCustom04" required>
+                            <option selected disabled value="">Ürün...</option>
+                            <option>Kabak</option>
+                            <option>Turp</option>
+                            <option>Patates</option>
+                            <option>Domates</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            lütfen bir tarım ürünü seçiniz
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="validationCustom05" class="form-label">Tarım Alanı Büyüklüğü (M2)</label>
+                        <input type="text" class="form-control" id="validationCustom05" required>
+                        <div class="invalid-feedback">
+                            Lütfen bir tarım alanı belirtiniz
+                        </div>
+                    </div>
+                    <div class="col-md-2"><p id="byzbosluk">-</p></div>
+                    <div class="col-md-4"><p id="byzbosluk">-</p></div>
+
+
+                    <div class="col-md-2">
+                        <button class="btn btn-lg  btn-primary" type="submit">Çalıştır</button>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                            <label class="form-check-label" for="invalidCheck">
+                                Tarım verilerilerimin işlenmesi için kullanılması ve depolanmasına izin veriyorum
+                            </label>
+                            <div class="invalid-feedback">
+                                Şartları kabul etmelisiniz
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6"><p id="byzbosluk">-</p></div>
+                    <div class="col-md-6"><p id="byzbosluk">-</p></div>
+
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- Sulama Dock -->
+    <br>
+    <!-- Sulama Sonuçları -->
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Tarih</th>
+                <th scope="col">Sulama Miktarı</th>
+                <th scope="col">Sulama Saati</th>
+                <th scope="col">Yağmur Miktarı</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+
+
+                <th scope="row">1</th>  <!-- Sulama Günü -->
+                <td>Mark</td>  <!-- Sulama Miktarı -->
+                <td>Otto</td>  <!-- Sulama Saati-->
+                <td>@mdo</td>  <!-- Sulama Sonuçları -->
+            </tr>
+            <tr>
+                <th scope="row">2</th>  <!-- Sulama Günü -->
+                <td>Mark</td>  <!-- Sulama Miktarı -->
+                <td>Otto</td>  <!-- Sulama Saati-->
+                <td>@mdo</td>  <!-- Sulama Sonuçları -->
+            </tr>
+            <tr>
+                <th scope="row">3</th>  <!-- Sulama Günü -->
+                <td>Mark</td>  <!-- Sulama Miktarı -->
+                <td>Otto</td>  <!-- Sulama Saati-->
+                <td>@mdo</td>  <!-- Sulama Sonuçları -->
+            </tr>
+            <tr>
+                <th scope="row">4</th>  <!-- Sulama Günü -->
+                <td>Mark</td>  <!-- Sulama Miktarı -->
+                <td>Otto</td>  <!-- Sulama Saati-->
+                <td>@mdo</td>  <!-- Sulama Sonuçları -->
+            </tr>
+            <tr>
+                <th scope="row">5</th>  <!-- Sulama Günü -->
+                <td>Mark</td>  <!-- Sulama Miktarı -->
+                <td>Otto</td>  <!-- Sulama Saati-->
+                <td>@mdo</td>  <!-- Sulama Sonuçları -->
+            </tr>
+            <tr>
+                <th scope="row">6</th>  <!-- Sulama Günü -->
+                <td>Mark</td>  <!-- Sulama Miktarı -->
+                <td>Otto</td>  <!-- Sulama Saati-->
+                <td>@mdo</td>  <!-- Sulama Sonuçları -->
+            </tr>
+            <tr>
+                <th scope="row">7</th>  <!-- Sulama Günü -->
+                <td>Mark</td>  <!-- Sulama Miktarı -->
+                <td>Otto</td>  <!-- Sulama Saati-->
+                <td>@mdo</td>  <!-- Sulama Sonuçları -->
+            </tr>
+            <tr>
+                <th scope="row">8</th>  <!-- Sulama Günü -->
+                <td>Mark</td>  <!-- Sulama Miktarı -->
+                <td>Otto</td>  <!-- Sulama Saati-->
+                <td>@mdo</td>  <!-- Sulama Sonuçları -->
+            </tr>
+            
+        </tbody>
+    </table>
+    <!-- Sulama Sonuçları -->
+    <!-- Ana Sayfa -->
+    <!-- jQuery -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- jQuery -->
+
+</body>
+</html>
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+    })()
+</script>
+   
+{% endblock %}

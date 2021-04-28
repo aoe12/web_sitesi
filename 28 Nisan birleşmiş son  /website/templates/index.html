@@ -1,0 +1,176 @@
+{% extends "base.html" %}
+{% block title %}NITAVOS{% endblock %}
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Nitavos.css')}}">
+    <script
+    type="text/javascript"
+    src="{{ url_for('static', filename='Nitavos.js') }}"
+  ></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Nitavos'a Hoşgeldiniz</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- Grid js -->
+    <script type="text/javascript" src="assets/scripts/grid/jquery-1.10.2.min.js"></script>
+    <script src="assets/scripts/grid/grids.js"></script>
+    <script type="text/javascript">
+        jQuery(function ($) {
+            $('.element').responsiveEqualHeightGrid();
+        });
+    </script>
+    <!-- Grid js -->
+</head>
+<body>
+   <!--Navbar-->
+<div class="sticky-top">
+    <div class="topnav" id="myTopnav">
+    <span style="font-size:55px;cursor:pointer;color:white" onclick="openNav()">&#9776;</span>
+    <img src="static/nitvos.png" style="width:340px;height:90px;margin:0px 0px 20px 0px;">
+        <div class="header-right">
+
+        <a href="/"><i class="fa fa-fw fa-home"style="font-size:50px"></i><p id="navbar">Ana Sayfa</p></a>
+        </div>
+    <div id="mySidenav" class="sidenav">
+         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+         <a href="/"><i class="fa fa-fw fa-home"></i><p id="navbar">Ana Sayfa</p></a>
+         <a href="/hakkinda"><i class="fa fa-fw fa-file"></i><p id="navbar">Hakkında</p></a>
+         <a href="/hastaliklar"><i class="fa fa-fw fa-leaf"></i><p id="navbar">Hastalıklar</p></a>
+         <a href="/login"><i class="fa fa-fw fa-sign-in"></i><p id="navbar">Giriş Yap</p></a>
+         <a href="/sign-up"><i class="fa fa-fw fa-wpforms"></i><p id="navbar">Kayıt Ol</p></a>
+    </div>
+    </div>
+</div>
+
+ <!--Navbar-->
+    <!-- Ana Sayfa -->
+    <div class="grey-square">
+        <div class="r">
+            <div class="c">
+                <p id="baslik">
+                    <img src="static/NITAVOS.png" class="image">
+                </p>
+            </div>
+            <div class="c">
+                <p id="baslik">
+                    Nesnelerin İnternet Tabanlı Akıllı Ve Otonom Sulama Sistemi, NITAVOS'a Hoşgeldiniz
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Ana Sayfa -->
+    <br>
+    <div class="white-square">
+        <p id="baslik">
+            Türkiye İçin Detaylı Hava Durumu
+        </p>
+        <!--Widgetlar-->
+        <div class="row2">
+            <div class="column2">
+                <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+                <div class="elfsight-app-f57de6ce-9c95-4ccf-b605-ad7d8faba918"></div>
+            </div>
+            <div class="column2">
+                <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+                <div class="elfsight-app-74cf1c48-4dfe-4e0d-a4d0-f253d4cf023b"></div>
+            </div>
+            <div class="column2">
+            <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+            <div class="elfsight-app-89c84bdc-a3c6-4c7f-b9b7-310e5ed6ddf1"></div>
+            </div>
+        </div>
+        <!--Widgetlar-->
+    </div>
+<br>
+     <!--SSS Sikça Sorulan Sorular-->
+     <div class="grey-square">
+
+         <p id="gribosluk">-</p>
+         <p id="yazi">
+             Nitavos Tarım Teknolojileri ile İnterneti kullanarak uzaktan ve su tasaruflu tarım yapan bir sistemdir
+         </p>
+         <p id="gribosluk">-</p>
+     </div>
+     <!--SSS Sikça Sorulan Sorular-->
+
+     <div class="white-square">
+         <p id="byzbosluk">-</p>
+     </div>
+        <!--Galeri-->
+
+    <div class="container">
+        <p id="baslik">Galerimiz</p>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="static/foto1k.jpeg" alt="Los Angeles" style="width:100%;height:100%;border-radius:40p">
+                </div>
+
+                <div class="item">
+                    <img src="static/foto2k.jpeg" alt="Chicago" style="width:100%;height:100%;border-radius:40p">
+                </div>
+
+                <div class="item">
+                    <img src="static/foto3k.jpeg" alt="New york" style="width:100%;height:100%;border-radius:40p">
+                </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+    <!--Galeri-->
+    <p id="byzbosluk">-</p>
+    </div>
+    <!--Kontak-->
+    <!--sponsorlar-->
+<br>
+    <p id="baslik">Sponsorlarımız</p>
+<div align="center">
+    <img src="static/150px-Bahcesehir_new_logo.png"/>
+    <img src="static/Tise-removebg-preview.png"/>
+    <img src="static/Halbach-removebg-preview.png"/>
+</div>
+
+
+    <!--sponsorlar-->
+
+    <!-- jQuery -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- jQuery -->
+</body>
+</html>
+
+<!--kopyalanacaklar-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<!--kopyalanacaklar-->
+{% endblock %}
