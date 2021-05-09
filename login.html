@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %}NITAVOS | Giriş{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Nitavos.css')}}">
+<script
+type="text/javascript"
+src="{{ url_for('static', filename='Nitavos.js') }}"
+></script>
+<div class="topnav" id="myTopnav">
+    <span style="font-size:55px;cursor:pointer;color:white" onclick="openNav()">&#9776;</span>
+    <img src="static/nitvos.png" style="width:340px;height:90px;margin:0px 0px 20px 0px;">
+    <div class="header-right">
+        <a href="/login"><i class="fa fa-fw fa-user" style="font-size:50px"></i><p id="navbar">Giriş</p></a>
+    </div>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="/"><i class="fa fa-fw fa-home"></i><p id="navbar">Ana Sayfa</p></a>
+        <a href="/hakkinda"><i class="fa fa-fw fa-file"></i><p id="navbar">Hakkında</p></a>
+        <a href="/hastaliklar"><i class="fa fa-fw fa-leaf"></i><p id="navbar">Hastalıklar</p></a>
+        <a href="/login"><i class="fa fa-fw fa-sign-in"></i><p id="navbar">Giriş Yap</p></a>
+        <a href="/sign-up"><i class="fa fa-fw fa-wpforms"></i><p id="navbar">Kayıt Ol</p></a>
+    </div>
+</div>
+<form method="POST">
+    <br />
+    <h3 align="center">Giriş Yap</h3>
+    <p align="center">Size özel sulama sistemi sayfasına erişebilmek için lüften giriş yapın.</p>
+    <div class="form-group">
+        <label for="email">Email Adresi</label>
+        <input
+        type="email"
+        class="form-control"
+        id="email"
+        name="email"
+        placeholder="Email adresinizi giriniz"
+        />
+    </div>
+
+
+    <div class="form-group">
+        <label for="password">Şifre</label>
+        <input
+        type="password"
+        class="form-control"
+        id="password"
+        name="password"
+        placeholder="Şifrenizi giriniz"
+        />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Giriş Yap!</button>
+</form>
+<br>
+Henüz kayıt olmadınız mı? <a href="/sign-up">Hemen kaydolun!</a>
+
+{% endblock %}

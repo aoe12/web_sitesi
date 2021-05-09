@@ -1,0 +1,310 @@
+{% extends "base.html" %}
+{% block title %}NİTAVOS | Sulama Sistemi{% endblock %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Nitavos.css')}}">
+    <script
+    type="text/javascript"
+    src="{{ url_for('static', filename='Nitavos.js') }}"
+  ></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <!-- kopyaslanıcak 2 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+  <!-- kopyaslanıcak 2 -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nitavos Sulama Sistemi</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+
+    <!-- Grid js -->
+    <script type="text/javascript" src="assets/scripts/grid/jquery-1.10.2.min.js"></script>
+
+    <script src="assets/scripts/grid/grids.js"></script>
+
+    <script type="text/javascript">
+        jQuery(function ($) {
+            $('.element').responsiveEqualHeightGrid();
+        });
+    </script>
+    <!-- Grid js -->
+
+
+</head>
+<body>
+
+
+   <!--Navbar-->
+   <div class="sticky-top">
+    <div class="topnav" id="myTopnav">
+       <span style="font-size:55px;cursor:pointer;color:white" onclick="openNav()">&#9776;</span>
+       <img src="static/nitvos.png" style="width:340px;height:90px;margin:0px 0px 20px 0px;">
+        <div class="header-right">
+           {% if user.is_authenticated %}
+            <a href="/sulama+bilgileri"><i class="fa fa-fw fa-rss" style="font-size:50px"></i><p id="navbar">Sulama Sistemi</p></a>
+        </div>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="/anasayfa2"><i class="fa fa-fw fa-home"></i><p id="navbar">Ana Sayfa</p></a>
+            <a href="/hakkinda2"><i class="fa fa-fw fa-file"></i><p id="navbar">Hakkında</p></a>
+            <a href="/hastaliklar2"><i class="fa fa-fw fa-leaf"></i><p id="navbar">Hastalıklar</p></a>
+            <a href="/sulama+bilgileri"><i class="fa fa-fw fa-rss"></i><p id="navbar">Sulama Sis.</p></a>
+            <a href="/logout"><i class="fa fa-fw fa-sign-out"></i><p id="navbar">Çıkış Yap</p></a>
+        </div>
+        {% endif %}
+    </div>
+    </div>
+    <!--Navbar-->
+    <br>
+    <!-- Ana Sayfa -->
+    <p id="baslik">Sulama yapılabilmesi için lütfen bilgilerinizi giriniz</p>
+    <p id="byzbosluk">-</p>
+    <!-- Sulama Dock -->
+    <div class=" row3">
+
+        <div class=" column3">
+            <div class="blue-square" style="border: 5px blue solid; border-radius:20px">
+
+                <form method="POST" class="row g-3 needs-validation" novalidate>
+                    <div class="col-md-6"><p id="byzbosluk">-</p></div>
+                    <div class="col-md-6"><p id="byzbosluk">-</p></div>
+                    <div class="col-md-2"><p id="byzbosluk">-</p></div>
+                    <div class="col-md-2"><p id="yazi">Ekim tarihi seçiniz:</p></div>
+
+                    <div class="col-md-1">
+                        <label for="gun" class="form-label">Gün</label>
+                        <select class="form-select" name="gun" id="gun" required>
+                            <option selected disabled value="">Gün...</option>
+                            <option type="text" value="1">1</option>
+                            <option type="text" value="2">2</option>
+                            <option type="text" value="3">3</option>
+                            <option type="text" value="4">4</option>
+                            <option type="text" value="5">5</option>
+                            <option type="text" value="6">6</option>
+                            <option type="text" value="7">7</option>
+                            <option type="text" value="8">8</option>
+                            <option type="text" value="9">9</option>
+                            <option type="text" value="10">10</option>
+                            <option type="text" value="11">11</option>
+                            <option type="text" value="12">12</option>
+                            <option type="text" value="13">13</option>
+                            <option type="text" value="14">14</option>
+                            <option type="text" value="15">15</option>
+                            <option type="text" value="16">16</option>
+                            <option type="text" value="17">17</option>
+                            <option type="text" value="18">18</option>
+                            <option type="text" value="19">19</option>
+                            <option type="text" value="20">20</option>
+                            <option type="text" value="21">21</option>
+                            <option type="text" value="22">22</option>
+                            <option type="text" value="23">23</option>
+                            <option type="text" value="24">24</option>
+                            <option type="text" value="25">25</option>
+                            <option type="text" value="26">26</option>
+                            <option type="text" value="27">27</option>
+                            <option type="text" value="28">28</option>
+                            <option type="text" value="29">29</option>
+                            <option type="text" value="30">30</option>
+                            <option type="text" value="31">31</option>
+
+                        </select>
+                        <div class="invalid-feedback">
+                            Lütfen geçerli bir gün giriniz
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <label for="ay" class="form-label">Ay</label>
+                        <select class="form-select" name="ay" id="ay" required>
+                            <option selected disabled value="">Ay...</option>
+                            <option type="text" value="ocak">Ocak</option>
+                            <option type="text" value="subat">Şubat</option>
+                            <option type="text" value="mart">Mart</option>
+                            <option type="text" value="nisan">Nisan</option>
+                            <option type="text" value="mayis">Mayıs</option>
+                            <option type="text" value="haziran">Haziran</option>
+                            <option type="text" value="temmuz">Temmuz</option>
+                            <option type="text" value="agustos">Ağustos</option>
+                            <option type="text" value="eylul">Eylül</option>
+                            <option type="text" value="ekim">Ekim</option>
+                            <option type="text" value="kasim">Kasım</option>
+                            <option type="text" value="aralik">Aralık</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Lütfen geçerli bir ay giriniz
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <label for="yıl" class="form-label">Yıl</label>
+                        <select class="form-select" name="yıl" id="yıl" required>
+                            <option selected disabled value="">Yıl...</option>
+                            <option type="text" value="2021">2021</option>
+                            <option type="text" value="2022">2022</option>
+                            <option type="text" value="2023">2023</option>
+                            <option type="text" value="2024">2024</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Lütfen geçerli bir yıl giriniz
+                        </div>
+                    </div>
+                    <div class="col-md-2"><p id="yazi">Hasat Tarihi:</p></div>
+                    <div class="col-md-3"><p id="byzbosluk">-</p></div>
+                    <div class="col-md-2"><p id="byzbosluk">-</p></div>
+                    <div class="col-md-2"><p id="yazi">Ekilen tarım urunünü seçiniz</p></div>
+
+                    <div class="col-md-3">
+                        <label for="urun" class="form-label">Ürün Seçiniz</label>
+                        <select class="form-select" name="urun" id="urun" required>
+                            <option selected disabled value="">Ürün...</option>
+                            <option type="text" value="kabak">Kabak</option>
+                            <option type="text" value="turp">Turp</option>
+                            <option type="text" value="patates">Patates</option>
+                            <option type="text" value="domates">Domates</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            lütfen bir tarım urunü seçiniz
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="alan" class="form-label">Tarım Alanı Büyüklüğü (M2)</label>
+                        <input type="text" class="form-control" name="alan" id="alan" required>
+                        <div class="invalid-feedback">
+                            Lütfen bir tarım alanı belirtiniz
+                        </div>
+                    </div>
+                    <div class="col-md-2"><p id="byzbosluk">-</p></div>
+                    <div class="col-md-4"><p id="byzbosluk">-</p></div>
+
+
+                    <div class="col-md-2">
+                        <button class="btn btn-lg  btn-primary" type="submit">Çalıştır</button>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                            <label class="form-check-label" for="invalidCheck">
+                                Tarım verilerilerimin işlenmesi için kullanılması ve depolanmasına izin veriyorum
+                            </label>
+                            <div class="invalid-feedback">
+                                Şartları kabul etmelisiniz
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6"><p id="byzbosluk">-</p></div>
+                    <div class="col-md-6"><p id="byzbosluk">-</p></div>
+
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- Sulama Dock -->
+    <br>
+    <!-- Sulama Sonuçları -->
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Tarih</th>
+                <th scope="col">Sulama Miktarı</th>
+                <th scope="col">Sulama Saati</th>
+                <th scope="col">Yağmur Miktarı</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+
+
+                <th scope="row">1</th>  <!-- Sulama Günü -->
+                <td>Mark</td>  <!-- Sulama Miktarı -->
+                <td>Otto</td>  <!-- Sulama Saati-->
+                <td>@mdo</td>  <!-- Sulama Sonuçları -->
+            </tr>
+            <tr>
+                <th scope="row">2</th>  <!-- Sulama Günü -->
+                <td>Mark</td>  <!-- Sulama Miktarı -->
+                <td>Otto</td>  <!-- Sulama Saati-->
+                <td>@mdo</td>  <!-- Sulama Sonuçları -->
+            </tr>
+            <tr>
+                <th scope="row">3</th>  <!-- Sulama Günü -->
+                <td>Mark</td>  <!-- Sulama Miktarı -->
+                <td>Otto</td>  <!-- Sulama Saati-->
+                <td>@mdo</td>  <!-- Sulama Sonuçları -->
+            </tr>
+            <tr>
+                <th scope="row">4</th>  <!-- Sulama Günü -->
+                <td>Mark</td>  <!-- Sulama Miktarı -->
+                <td>Otto</td>  <!-- Sulama Saati-->
+                <td>@mdo</td>  <!-- Sulama Sonuçları -->
+            </tr>
+            <tr>
+                <th scope="row">5</th>  <!-- Sulama Günü -->
+                <td>Mark</td>  <!-- Sulama Miktarı -->
+                <td>Otto</td>  <!-- Sulama Saati-->
+                <td>@mdo</td>  <!-- Sulama Sonuçları -->
+            </tr>
+            <tr>
+                <th scope="row">6</th>  <!-- Sulama Günü -->
+                <td>Mark</td>  <!-- Sulama Miktarı -->
+                <td>Otto</td>  <!-- Sulama Saati-->
+                <td>@mdo</td>  <!-- Sulama Sonuçları -->
+            </tr>
+            <tr>
+                <th scope="row">7</th>  <!-- Sulama Günü -->
+                <td>Mark</td>  <!-- Sulama Miktarı -->
+                <td>Otto</td>  <!-- Sulama Saati-->
+                <td>@mdo</td>  <!-- Sulama Sonuçları -->
+            </tr>
+            <tr>
+                <th scope="row">8</th>  <!-- Sulama Günü -->
+                <td>Mark</td>  <!-- Sulama Miktarı -->
+                <td>Otto</td>  <!-- Sulama Saati-->
+                <td>@mdo</td>  <!-- Sulama Sonuçları -->
+            </tr>
+            
+        </tbody>
+    </table>
+    <!-- Sulama Sonuçları -->
+    <!-- Ana Sayfa -->
+    <!-- jQuery -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- jQuery -->
+
+</body>
+</html>
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+    })()
+</script>
+
+{% endblock %}
